@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+  #logo{
+     margin-left: 700px;
+     margin-top: 100px;
+  }
+  #container{
+      height: 500px;
+      width: 35%;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;      margin: auto;
+  }
+  #sign{
+      margin-left: 220px;
+  }
+  h4{
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 20px;
+  }
+  #name{
+      margin-top: -20px;
+      margin-left: 20px;
+      padding: 15px 300px 15px 15px;
+      border-radius: 5px;
+      border-color: black;
+  }
+  p{
+      text-align: center;
+      font-size: 1rem;
+  }
+  #button{
+     margin-left: 20px;
+     margin-top: 60px;
+     padding: 15px 220px 15px 220px;
+     background-color: white;
+     border-color: black;
+     border-radius: 5px;
+     color: red;
+     background-color: whitesmoke;
+  }
+  #button:hover{
+    background-color: red;
+    border-color: black;
+    color: white;
+  }
+  #name1{
+      margin-top: -20px;
+      margin-left: 20px;
+      padding: 15px 300px 15px 15px;
+      border-radius: 5px;
+      border-color: black;
+  }
+  #name2{
+      margin-top: -20px;
+      margin-left: 20px;
+      padding: 15px 300px 15px 15px;
+      border-radius: 5px;
+      border-color: black;
+  }
+    </style>
+</head>
+<body>
+    <img id="logo" src="https://sso.masaischool.com/brand_dark.svg" alt="logo">
+    <div id="container">
+    <h2 id="sign">Sign Up</h2>
+    <h4>Full name</h4>
+    <input id="name" type="text" placeholder="Enter your full name">
+    <br>
+    <h4>Email</h4>
+    <input id="name1" type="text" placeholder="Enter your Email">
+    <br>
+    <h4>Password</h4>
+    <input id="name2" type="text" placeholder="Enter your password">
+    <br>
+    <!-- <p>By signing up, I accept the Masai School <ul>Term of Services</ul> and acknowledge the <ul>Privacy Policy</ul> </p> -->
+        <input id="button" type="submit" value="Sign Up">
+  
+    </div>
+
+</body>
+</html>
+<script>
+    document.querySelector("#button").addEventListener("click", clickfun)
+
+        var sub = JSON.parse(localStorage.getItem("submit")) ||[]
+    function clickfun(){
+       event.preventDefault()
+
+       if((Email = "sjayswal801@gmail.com") && (password= "123456789")){
+        alert("Sign Up Successful")
+       }
+       else
+       {
+          
+       }
+
+       var submitobj = {
+         
+        fullname:document.querySelector("#name").value,
+        Email:document.querySelector("#name2").value,
+        password:document.querySelector("#name2").value,
+       }
+       sub.push(submitobj)
+       console.log(sub);
+       localStorage.setItem("submit",JSON.stringify(sub))
+
+       window.location.href="login.html"
+    }
+   
+</script>
